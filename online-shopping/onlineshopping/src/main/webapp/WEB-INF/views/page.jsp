@@ -21,6 +21,10 @@
 
 <title>Online Shopping - ${title}</title>
 
+<script>
+	window.menu = '${title}';
+</script>
+
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
 
@@ -31,32 +35,41 @@
 
 <body>
 
-	<!-- Navigation -->
-	<%@include file="./shared/navbar.jsp"%>
+	<div class="wrapper">
 
-	<!-- Page Content-->
-	<!-- Loading home.jsp when user click home -->
-	<c:if test="${userClickHome == true}">
-		<%@include file="home.jsp"%>
-	</c:if>
-	
-	<!-- Loading about.jsp when user click about -->
-	<c:if test="${userClickAbout == true}">
-		<%@include file="about.jsp"%>
-	</c:if>
-	
-	<!-- Loading contact.jsp when user click contact -->
-	<c:if test="${userClickContact == true}">
-		<%@include file="contact.jsp"%>
-	</c:if>
-	
-	
-	<!-- Footer -->
-	<%@include file="./shared/footer.jsp"%>
+		<!-- Navigation -->
+		<%@include file="./shared/navbar.jsp"%>
 
-	<!-- Bootstrap core JavaScript -->
-	<script src="${js}/jquery.min.js"></script>
-	<script src="${js}/bootstrap.bundle.min.js"></script>
+		<!-- Page Content-->
+
+		<div class="content">
+
+			<!-- Loading home.jsp when user click home -->
+			<c:if test="${userClickHome == true}">
+				<%@include file="home.jsp"%>
+			</c:if>
+
+			<!-- Loading about.jsp when user click about -->
+			<c:if test="${userClickAbout == true}">
+				<%@include file="about.jsp"%>
+			</c:if>
+
+			<!-- Loading contact.jsp when user click contact -->
+			<c:if test="${userClickContact == true}">
+				<%@include file="contact.jsp"%>
+			</c:if>
+
+		</div>
+
+		<!-- Footer -->
+		<%@include file="./shared/footer.jsp"%>
+
+		<!-- Bootstrap core JavaScript -->
+		<script src="${js}/jquery.min.js"></script>
+		<script src="${js}/bootstrap.bundle.min.js"></script>
+		<script src="${js}/myapp.js"></script>
+
+	</div>
 
 </body>
 
