@@ -31,6 +31,9 @@
 <!-- Custom styles for this template -->
 <link href="${css}/shop-homepage.css" rel="stylesheet">
 
+<!-- Bootstrap readable theme -->
+<link href="${css}/bootstrap-readable-theme.css" rel="stylesheet">
+
 </head>
 
 <body>
