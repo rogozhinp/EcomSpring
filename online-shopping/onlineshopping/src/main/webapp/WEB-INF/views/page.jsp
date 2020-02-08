@@ -13,35 +13,50 @@
 
 <head>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
 
-  <title>Shop Homepage - Start Bootstrap Template</title>
+<title>Online Shopping - ${title}</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="${css}/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap core CSS -->
+<link href="${css}/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="${css}/shop-homepage.css" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link href="${css}/shop-homepage.css" rel="stylesheet">
 
 </head>
 
 <body>
 
-  <!-- Navigation -->
-	<%@include file="./shared/navbar.jsp" %>
+	<!-- Navigation -->
+	<%@include file="./shared/navbar.jsp"%>
 
-  <!-- Page Content, loading home.jsp -->
-	<%@include file="home.jsp" %>
+	<!-- Page Content-->
+	<!-- Loading home.jsp when user click home -->
+	<c:if test="${userClickHome == true}">
+		<%@include file="home.jsp"%>
+	</c:if>
+	
+	<!-- Loading about.jsp when user click about -->
+	<c:if test="${userClickAbout == true}">
+		<%@include file="about.jsp"%>
+	</c:if>
+	
+	<!-- Loading contact.jsp when user click contact -->
+	<c:if test="${userClickContact == true}">
+		<%@include file="contact.jsp"%>
+	</c:if>
+	
+	
+	<!-- Footer -->
+	<%@include file="./shared/footer.jsp"%>
 
-  <!-- Footer -->
-	<%@include file="./shared/footer.jsp" %>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="${js}/jquery.min.js"></script>
-  <script src="${js}/bootstrap.bundle.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script src="${js}/jquery.min.js"></script>
+	<script src="${js}/bootstrap.bundle.min.js"></script>
 
 </body>
 
