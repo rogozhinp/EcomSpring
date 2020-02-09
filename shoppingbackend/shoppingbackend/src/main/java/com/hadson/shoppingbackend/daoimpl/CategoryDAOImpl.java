@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,10 +21,19 @@ public class CategoryDAOImpl implements CategoryDAO {
 
 	private static List<Category> categories = new ArrayList<>();
 
+	/**
+	 * fetching the list of categories
+	 */
 	@Override
 	public List<Category> list() {
-		// TODO Auto-generated method stub
-		return null;
+
+		String selectedActiveCategory = "FROM Category WHERE active = :active";
+
+		Query query = sessionFactory.getCurrentSession().createQuery(selectedActiveCategory);
+
+		query.setParameter("active", true);
+
+		return query.getResultList();
 	}
 
 	/**
