@@ -62,6 +62,11 @@
 				<%@include file="contact.jsp"%>
 			</c:if>
 
+			<!-- Loading contact.jsp when user click contact -->
+			<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true}">
+				<%@include file="listProducts.jsp"%>
+			</c:if>
+
 		</div>
 
 		<!-- Footer -->
