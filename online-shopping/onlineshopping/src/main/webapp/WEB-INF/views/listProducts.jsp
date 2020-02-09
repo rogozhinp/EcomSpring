@@ -27,7 +27,7 @@
 
 							<li class="breadcrumb-item"><a href="${contextRoot }/home">Home</a></li>
 							<li class="breadcrumb-item">Category</li>
-							<li class="breadcrumb-item-active">${category.name}</li>
+							<li class="breadcrumb-item">${category.name}</li>
 
 						</ol>
 					</c:if>
