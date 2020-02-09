@@ -10,3 +10,5 @@ CREATE TABLE category (
 
 
 );
+
+INSERT INTO category (name, description, image_url, is_active) VALUES ('Mobile', 'This is description for Mobile Category', 'CAT_3.png', true)
