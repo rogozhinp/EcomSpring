@@ -15,6 +15,14 @@
 	</properties>
 
 	<dependencies>
+
+		<!-- Link backend project with frontend -->
+		<dependency>
+			<groupId>com.hadson</groupId>
+			<artifactId>shoppingbackend</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
