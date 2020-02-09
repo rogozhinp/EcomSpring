@@ -3,9 +3,12 @@ package com.hadson.shoppingbackend.daoimpl;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.hadson.shoppingbackend.dao.CategoryDAO;
 import com.hadson.shoppingbackend.dto.Category;
 
+@Repository("categoryDAO")
 public class CategoryDAOImpl implements CategoryDAO {
 
 	private static List<Category> categories = new ArrayList<>();
