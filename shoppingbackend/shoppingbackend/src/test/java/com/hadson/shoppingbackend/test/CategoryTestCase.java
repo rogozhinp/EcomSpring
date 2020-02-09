@@ -26,23 +26,35 @@ public class CategoryTestCase {
 		categoryDAO = (CategoryDAO) context.getBean("categoryDAO");
 	}
 
-//	@Test
-//	public void testAddCategory() {
-//
-//		category = new Category();
-//
-//		category.setName("Television");
-//		category.setDescription("Description for television");
-//		category.setImageURL("CAT_1.png");
-//
-//		assertEquals("Successfully added a category inside the table", true, categoryDAO.add(category));
-//	}
-
 	@Test
-	public void testGetCategory() {
+	public void testDeleteCategory() {
 
 		category = categoryDAO.get(2);
-		assertEquals("Successfully fetched a single category from the table!", "Television", category.getName());
+		assertEquals("Successfully deleted a single category in the table!", true, categoryDAO.delete(category));
 	}
+
+//	@Test
+//	public void testUpdateCategory() {
+//
+//		category = categoryDAO.get(2);
+//		category.setName("TV");
+//		assertEquals("Successfully updated a single category in the table!", true, categoryDAO.update(category));
+//	}
+
+	/*
+	 * // @Test // public void testAddCategory() { // // category = new Category();
+	 * // // category.setName("Television"); //
+	 * category.setDescription("Description for television"); //
+	 * category.setImageURL("CAT_1.png"); // //
+	 * assertEquals("Successfully added a category inside the table", true,
+	 * categoryDAO.add(category)); // }
+	 */
+	/*
+	 * @Test public void testGetCategory() {
+	 * 
+	 * category = categoryDAO.get(2);
+	 * assertEquals("Successfully fetched a single category from the table!",
+	 * "Television", category.getName()); }
+	 */
 
 }
