@@ -12,7 +12,6 @@
 		<div class="col-md-9">
 			<!-- Breadcrumb -->
 			<div class="row">
-
 				<div class="col-lg-12">
 					<c:if test="${userClickAllProducts == true }">
 						<ol class="breadcrumb">
@@ -35,7 +34,28 @@
 
 			</div>
 
-
+			<div class="row">
+			
+				<div class="col-lg-12">
+				
+					<table id="productListTable" class="table table-striped table-bordered">
+					
+						<thead>
+						
+							<tr>
+							
+								<th>ID</th>
+								<th>Name</th>
+							
+							</tr>
+						
+						</thead>
+					
+					</table>	
+				
+				</div>
+			
+			</div>
 
 		</div>
 
