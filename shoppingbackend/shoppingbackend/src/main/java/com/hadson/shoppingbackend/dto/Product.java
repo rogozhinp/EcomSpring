@@ -11,6 +11,8 @@ import javax.persistence.Id;
 
 import org.springframework.stereotype.Component;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Component
 @Entity
 public class Product implements Serializable {
@@ -24,15 +26,19 @@ public class Product implements Serializable {
 	private String code;
 	private String name;
 	private String brand;
+	@JsonIgnore
 	private String description;
 	@Column(name = "unit_price")
 	private double unitPrice;
 	private int quantity;
 	@Column(name = "is_active")
+	@JsonIgnore
 	private boolean active;
 	@Column(name = "category_id")
+	@JsonIgnore
 	private int categoryId;
 	@Column(name = "supplier_id")
+	@JsonIgnore
 	private int supplierId;
 	private int purchases;
 	private int views;
