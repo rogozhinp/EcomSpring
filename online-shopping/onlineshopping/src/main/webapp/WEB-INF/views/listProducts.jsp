@@ -38,7 +38,7 @@
 			
 				<div class="col-lg-12">
 				
-					<table id="productListTable" class="table table-striped table-bordered">
+					<table id="productListTable" class="table table-striped table-borderd">
 					
 						<thead>
 						

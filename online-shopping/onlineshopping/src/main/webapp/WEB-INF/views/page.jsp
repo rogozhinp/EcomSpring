@@ -34,6 +34,9 @@
 <!-- Bootstrap readable theme -->
 <link href="${css}/bootstrap-readable-theme.css" rel="stylesheet">
 
+<!-- Bootstrap datatables -->
+<link href="${css}/dataTables.bootstrap4.css" rel="stylesheet">
+
 </head>
 
 <body>
@@ -79,6 +82,9 @@
 		
 		<!-- Datatable plugin -->
 		<script src="${js}/jquery.dataTables.js"></script>
+		
+		<!-- Bootstrap Datatables script -->
+		<script src="${js}/dataTables.bootstrap4.js"></script>
 
 	</div>
 
