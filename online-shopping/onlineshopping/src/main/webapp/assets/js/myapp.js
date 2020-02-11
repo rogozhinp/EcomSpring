@@ -20,29 +20,55 @@ $(function(){
 	
 	// code for jquery dataTable
 	// create a dataset
-	var products = [
-		
-		['1', 'ABC'],
-		['2', 'ERT'],
-		['3', 'QWE'],
-		['4', 'TYU'],
-		['5', 'ASD'],
-		['6', 'DFG'],
-		['7', 'HJK'],
-		['8', 'BNM'],
-	]
 	
 	var $table = $('#productListTable');
 	
 	// execute the below code only where we have this table
 	
-	if($table.length){
+    if($table.length){
+
+	var jsonUrl = '';
+	if(window.categoryId == ''){
+	    jsonUrl = window.contextRoot + '/json/data/all/products';
+	}
+	else {
+	    jsonUrl = window.contextRoot + '/json/data/category/'+window.categoryId+'/products';
+	}
 		
 		$table.DataTable({
 			
 		    lengthMenu: [[3,5,10,-1], ['3 Records', '5 Records', '10 Records', 'ALL']],
 		    pageLength: 5,
-		    data: products
+		    ajax: {
+			url: jsonUrl,
+			dataSrc: ''
+		    },
+		    columns: [
+
+			{
+
+			    data: 'name'
+			},
+			{
+
+			    data: 'brand'
+			},
+			{
+
+			    data: 'unitPrice'
+			},
+			{
+
+			    data: 'quantity'
+			}
+
+		    ]
+
+		    
+
+
+		    
+		    
 		});
 		
 	}
