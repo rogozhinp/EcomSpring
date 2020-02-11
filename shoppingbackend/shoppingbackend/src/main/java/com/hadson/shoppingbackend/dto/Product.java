@@ -147,7 +147,6 @@ public class Product implements Serializable {
 		this.views = views;
 	}
 
-	// toString for debugging
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", code=" + code + ", name=" + name + ", brand=" + brand + ", description="

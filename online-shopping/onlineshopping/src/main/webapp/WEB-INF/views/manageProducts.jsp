@@ -1,6 +1,30 @@
 <%@taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <div class="container">
+
+	<div class="row justify-content-center">
+	
+	<c:if test="${not empty message}">
+	
+	<div class="col-lg-offset-2 col-lg-8">
+	
+		<div class="alert alert-success alert-dismissible">
+		
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			
+			${message}
+		
+		</div>
+		
+	</div>
+	
+	
+	</c:if>
+	
+	
+	
+	</div>
 
 	<div class="row justify-content-center">
 
@@ -14,7 +38,7 @@
 
 				<div class="card-body">
 					<!--FORM ELEMENTS -->
-					<sf:form class="form-horizontal" modelAttribute="product" action="${contextRoot}/manage/product" method="POST" enctype="multipart/form-data">
+					<sf:form class="form-horizontal" modelAttribute="product" action="${contextRoot}/manage/products" method="POST">
 
 					<div class="form-group">
 
@@ -105,16 +129,7 @@
 
 							<input type="submit" name="submit" id="submit" value="Submit"
 								class="btn btn-primary" />
-								
-								
-								<!-- Hidden fields for products -->
-								
-								<sf:hidden path="id"/>
-								<sf:hidden path="code"/>
-								<sf:hidden path="supplierId"/>
-								<sf:hidden path="active"/>
-								<sf:hidden path="purchases"/>
-								<sf:hidden path="views"/>
+
 
 						</div>
 					</div>
