@@ -71,7 +71,7 @@
 							<h1>${errorTitle}</h1>
 							<hr />
 							<h2>404</h2>
-							<blockquote>
+							<blockquote style="word-wrap:break-word">
 							
 								${errorDescription}
 							

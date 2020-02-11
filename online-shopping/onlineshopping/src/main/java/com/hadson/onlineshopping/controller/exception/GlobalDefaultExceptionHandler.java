@@ -1,5 +1,8 @@
 package com.hadson.onlineshopping.controller.exception;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
+
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
@@ -37,14 +40,21 @@ public class GlobalDefaultExceptionHandler {
 	}
 
 	@ExceptionHandler(Exception.class)
-	public ModelAndView handlerException() {
+	public ModelAndView handlerException(Exception ex) {
 
 		ModelAndView mv = new ModelAndView("error");
 
-		mv.addObject("errorTitle", "Error!");
-		mv.addObject("errorDescription", "The product you are looking for is not presence on this site.");
+		mv.addObject("errorTitle", "Contact with the site administrator.");
 
-		mv.addObject("title", "Product not found.");
+		/* only for debugging */
+		StringWriter sw = new StringWriter();
+		PrintWriter pw = new PrintWriter(sw);
+
+		ex.printStackTrace(pw);
+
+		mv.addObject("errorDescription", sw.toString());
+
+		mv.addObject("title", "Error");
 
 		return mv;
 
