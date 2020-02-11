@@ -4,5 +4,7 @@
 .jar
 .war
 .ear
-/onlineshopping/target/
-/shoppingbackend/target
+online-shopping/onlineshopping/target/
+online-shopping/shoppingbackend/target
+online-shopping/onlineshopping/src/main/webapp/assets/images/*
+online-shopping/onlineshopping/src/main/webapp/assets/fonts/*
