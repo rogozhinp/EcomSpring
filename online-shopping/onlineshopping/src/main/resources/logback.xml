@@ -15,7 +15,7 @@
 	
 	</logger>
 	
-	<root>
+	<root level="INFO">
 	
 		<appender-ref ref="consoleAppender"/>
 	
