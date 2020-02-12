@@ -23,7 +23,7 @@ $(function() {
 	}
 
 	// code for jquery dataTable
-	// create a dataset
+
 
 	var $table = $('#productListTable');
 
@@ -129,6 +129,112 @@ $(function() {
 		setTimeout(function(){
 			$alert.fadeOut('slow');
 		}, 3000)
+	}
+	
+	
+	
+	// Admin products table
+
+
+	var $adminProductsTable = $('#adminProductsTable');
+
+
+
+	if ($adminProductsTable.length) {
+
+		var jsonUrl = window.contextRoot + '/json/data/admin/all/products';
+
+
+		$adminProductsTable.DataTable({
+
+					lengthMenu : [ [ 10, 30, 50, -1 ],
+							[ '10 Records', '30 Records', '50 Records', 'ALL' ] ],
+					pageLength : 30,
+					ajax : {
+						url : jsonUrl,
+						dataSrc : ''
+					},
+					columns : [
+						
+						    {
+						    	
+							data : 'id',
+
+							},
+							{
+
+								data : 'code',
+								mRender: function(data, type, row){
+									return '<img src="'+window.contextRoot+'/resources/images/'+data+'.jpg" class="adminDataTableImg" />';
+								}
+							},
+							{
+
+								data : 'name'
+							},
+							{
+
+								data : 'brand'
+							},
+							{
+
+								data : 'quantity',
+								mRender: function(data, type, row){
+									if(data < 1){
+										return '<span style = "color:red">Out of Stock!</span>';
+									}
+									
+									return data;
+								}
+							},
+							{
+
+								data : 'unitPrice',
+								mRender : function(data, type, row) {
+									return '&#163; ' + data;
+								}
+							},
+							{
+
+								data : 'active',
+								bSortable: false,
+								mRender: function(data, type, row){
+									
+									var str = '';
+									
+									str += '<label>';
+									if(data){
+										str += '<input type="checkbox" checked="checked" value="'+row.id+'" />';
+									}
+									else{
+										str += '<input type="checkbox" value="'+row.id+'" />';
+									}
+									str += '<div class="slider"></div></label>';
+									
+									return str;
+									
+								}
+									
+
+							},
+							{
+								data: 'id',
+								bSortable: false,
+								mRender: function(data, type, row){
+									
+									var str = '';
+									
+									str += '<a href="${contextRoot}/manage/'+data+'/product" class="btn btn-warning">';
+									str += '<span class="glyphicon glyphicon-pencil"></span></a>';
+									
+									return str;
+								}
+							}
+
+					]
+
+				});
+
 	}
 
 });

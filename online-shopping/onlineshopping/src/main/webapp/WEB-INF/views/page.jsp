@@ -67,15 +67,16 @@
 			</c:if>
 
 			<!-- Loading contact.jsp when user clicks contact -->
-			<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true}">
+			<c:if
+				test="${userClickAllProducts == true or userClickCategoryProducts == true}">
 				<%@include file="listProducts.jsp"%>
 			</c:if>
-			
+
 			<!-- Loading contact.jsp when user clicks show product -->
 			<c:if test="${userClickShowProduct == true}">
 				<%@include file="singleProduct.jsp"%>
 			</c:if>
-			
+
 			<!-- Loading contact.jsp when user clicks manage product -->
 			<c:if test="${userClickManageProducts == true}">
 				<%@include file="manageProducts.jsp"%>
@@ -90,10 +91,10 @@
 		<script src="${js}/jquery.min.js"></script>
 		<script src="${js}/bootstrap.bundle.min.js"></script>
 		<script src="${js}/myapp.js"></script>
-		
+
 		<!-- Datatable plugin -->
 		<script src="${js}/jquery.dataTables.js"></script>
-		
+
 		<!-- Bootstrap Datatables script -->
 		<script src="${js}/dataTables.bootstrap4.js"></script>
 

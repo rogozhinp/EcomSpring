@@ -28,6 +28,7 @@
 
 	<div class="row justify-content-center">
 
+
 		<div class="col-lg-offset-2 col-lg-8">
 
 			<div class="card text-white bg-primary">
@@ -99,12 +100,13 @@
 									placeholder="Enter Quantity" />
 							</div>
 						</div>
-						
+
 						<!-- File element for image upload -->
 						<div class="form-group">
-							<label class="control-label col-md-4" for="file">Select an Image:</label>
+							<label class="control-label col-md-4" for="file">Select
+								an Image:</label>
 							<div class="col-md-8">
-								<sf:input type="file" path="file" id="file" class="form-control"/>
+								<sf:input type="file" path="file" id="file" class="form-control" />
 								<sf:errors path="file" cssClass="help-block" element="em" />
 							</div>
 						</div>
@@ -152,7 +154,57 @@
 
 	</div>
 
+	<div class="row">
 
+
+
+
+
+		<div class='col-lg-12'>
+			<h1>Available Products</h1>
+
+
+
+			<table id="adminProductsTable"
+				class="table table-condensed table-bordered">
+
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>image</th>
+						<th>Name</th>
+						<th>Brand</th>
+						<th>Qty. Avail</th>
+						<th>Unit Price</th>
+						<th>Activate</th>
+						<th>Edit</th>
+					</tr>
+				</thead>
+
+
+
+				<tfoot>
+					<tr>
+						<th>id</th>
+						<th>image</th>
+						<th>Name</th>
+						<th>Brand</th>
+						<th>Qty. Avail</th>
+						<th>Unit Price</th>
+						<th>Activate</th>
+						<th>Edit</th>
+					</tr>
+				</tfoot>
+
+
+			</table>
+
+
+		</div>
+
+
+
+	</div>
 
 
 </div>

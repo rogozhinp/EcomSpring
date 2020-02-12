@@ -38,8 +38,10 @@ body {
 	color: #ff0000;
 }
 
-
-
+.adminDataTableImg{
+	height: 50px;
+	weight: 50px;
+}
 
 
 /*glyphicons*/
