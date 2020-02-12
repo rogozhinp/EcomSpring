@@ -221,7 +221,7 @@ $(function() {
 									
 									var str = '';
 									
-									str += '<a href="${contextRoot}/manage/'+data+'/product" class="btn btn-warning">';
+									str += '<a href="'+window.contextRoot+'/manage/'+data+'/product" class="btn btn-warning">';
 									str += '<span class="glyphicon glyphicon-pencil"></span></a>';
 									
 									return str;
@@ -233,9 +233,6 @@ $(function() {
 					initComplete: function () {
 						var api = this.api();
 						api.$('.input-group-text input[type="checkbox"]').on('change' , function() {							
-							//var dText = (this.checked)? 'You want to activate the Product?': 'You want to de-activate the Product?';
-							//var checked = this.checked;
-							//var checkbox = $(this);
 							var checkbox = $(this);
 							var checked = checkbox.prop('checked');
 							var dMsg = (checked) ? 'You want to activate the Product?': 'You want to de-activate the Product?';
