@@ -120,7 +120,7 @@
 									<div class="text-right">
 										<br />
 										<button type="button" class="btn btn-warning btn-xs"
-											data-toggle="modal" data-target="#myCategoryModal">Add
+											data-toggle="modal" data-target="#categoryForm">Add
 											New Category</button>
 									</div>
 								</c:if>
@@ -155,7 +155,7 @@
 </div>
 
 <!-- Modal -->
-	<div class="modal fade" id="myCategoryModal" tabindex="-1"
+	<div class="modal fade" id="categoryForm" tabindex="-1"
 		role="dialog" aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
@@ -168,7 +168,7 @@
 				</div>
 				<div class="modal-body">
 
-					<sf:form id="categoryForm" class="form-horizontal"
+					<sf:form id="categoryFormValidate" class="form-horizontal"
 						modelAttribute="category" action="${contextRoot}/manage/category"
 						method="POST">
 
