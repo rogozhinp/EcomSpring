@@ -8,7 +8,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
 
+import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -24,12 +26,22 @@ public class Product implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String code;
+
+	@NotBlank(message = "Please enter the Product Name")
 	private String name;
+
+	@NotBlank(message = "Please enter the Brand Name")
 	private String brand;
+
 	@JsonIgnore
+	@NotBlank(message = "Please enter the Description")
 	private String description;
+
 	@Column(name = "unit_price")
+	@Min(value = 1, message = "The price cannot be less than 1")
 	private double unitPrice;
+
+	@Min(value = 0, message = "The quantity cannot be less than 0")
 	private int quantity;
 	@Column(name = "is_active")
 	@JsonIgnore
