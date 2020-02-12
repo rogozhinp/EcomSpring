@@ -39,7 +39,8 @@
 				<div class="card-body">
 					<!--FORM ELEMENTS -->
 					<sf:form class="form-horizontal" modelAttribute="product"
-						action="${contextRoot}/manage/products" method="POST">
+						action="${contextRoot}/manage/products" method="POST"
+						enctype="multipart/form-data">
 
 						<div class="form-group">
 
@@ -92,11 +93,18 @@
 						</div>
 
 						<div class="form-group">
-							<label class="control-label col-md-4">Quantity:</label>
+							<label class="control-label col-md-4" for="quantity">Quantity:</label>
 							<div class="col-md-8">
 								<sf:input type="number" path="quantity" class="form-control"
 									placeholder="Enter Quantity" />
-								<sf:errors path="quantity" cssClass="help-block" element="em" />
+							</div>
+						</div>
+						
+						<!-- File element for image upload -->
+						<div class="form-group">
+							<label class="control-label col-md-4" for="file">Select an Image:</label>
+							<div class="col-md-8">
+								<sf:input type="file" path="file" id="file" class="form-control"/>
 							</div>
 						</div>
 

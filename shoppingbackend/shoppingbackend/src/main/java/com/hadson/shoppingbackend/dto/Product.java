@@ -8,10 +8,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 import javax.validation.constraints.Min;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -41,7 +43,6 @@ public class Product implements Serializable {
 	@Min(value = 1, message = "The price cannot be less than 1")
 	private double unitPrice;
 
-	@Min(value = 0, message = "The quantity cannot be less than 0")
 	private int quantity;
 	@Column(name = "is_active")
 	@JsonIgnore
@@ -54,6 +55,17 @@ public class Product implements Serializable {
 	private int supplierId;
 	private int purchases;
 	private int views;
+
+	@Transient
+	private MultipartFile file;
+
+	public MultipartFile getFile() {
+		return file;
+	}
+
+	public void setFile(MultipartFile file) {
+		this.file = file;
+	}
 
 	// default constructor
 	public Product() {
