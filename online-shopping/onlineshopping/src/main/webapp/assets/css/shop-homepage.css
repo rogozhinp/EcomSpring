@@ -42,6 +42,9 @@ body {
 	height: 50px;
 	weight: 50px;
 }
+.modal-header{
+	margin:auto;
+}
 
 
 /*glyphicons*/

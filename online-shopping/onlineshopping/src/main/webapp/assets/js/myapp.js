@@ -201,15 +201,12 @@ $(function() {
 								mRender: function(data, type, row){
 									
 									var str = '';
-									
-									str += '<label>';
 									if(data){
-										str += '<input type="checkbox" checked="checked" value="'+row.id+'" />';
+										str += '<label class="input-group-text"><input type="checkbox" checked="checked" value="'+row.id+'" /></label>';
 									}
 									else{
-										str += '<input type="checkbox" value="'+row.id+'" />';
+										str += '<label class="input-group-text"><input type="checkbox" value="'+row.id+'" /></label>';
 									}
-									str += '<div class="slider"></div></label>';
 									
 									return str;
 									
@@ -231,10 +228,48 @@ $(function() {
 								}
 							}
 
-					]
+					],
+					
+					initComplete: function () {
+						var api = this.api();
+						api.$('.input-group-text input[type="checkbox"]').on('change' , function() {							
+							//var dText = (this.checked)? 'You want to activate the Product?': 'You want to de-activate the Product?';
+							//var checked = this.checked;
+							//var checkbox = $(this);
+							var checkbox = $(this);
+							var checked = checkbox.prop('checked');
+							var dMsg = (checked) ? 'You want to activate the Product?': 'You want to de-activate the Product?';
+							var value = checkbox.prop('value');
+						    bootbox.confirm({
+						    	size: 'medium',
+						    	title: 'Product Activation & Deactivation',
+						    	message: dMsg,
+						    	callback: function (confirmed) {
+							        if (confirmed) {
+							        	
+							        	var activationUrl = window.contextRoot + '/manage/product/'+value+'/activation';
+							        	$.post(activationUrl, function(data){
+								        	bootbox.alert({
+								        		size: 'medium',
+								        		title: 'Information',
+								        		message: data
+								        	});
+							        	});
+
+							        }
+							        else {							        	
+							        	checkbox.prop('checked', !checked);
+							        }
+						    	}
+						    });																											
+						});
+							
+					}
+
 
 				});
 
 	}
+	
 
 });
