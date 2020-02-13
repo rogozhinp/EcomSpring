@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -56,6 +57,7 @@ public class Cart implements Serializable {
 
 	// linking the cart with a user
 	@OneToOne
+	@JoinColumn(name = "uid")
 	private User user;
 
 	public User getUser() {
