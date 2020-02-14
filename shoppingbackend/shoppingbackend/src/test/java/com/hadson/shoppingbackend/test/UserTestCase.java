@@ -149,26 +149,34 @@ public class UserTestCase {
 //
 //	}
 
-	@Test
-	public void testAddAddress() {
+//	@Test
+//	public void testAddAddress() {
+//
+//		user = userDAO.getByEmail("kreig@mail.ru");
+//
+//		// add address
+//		address = new Address();
+//		address.setAddressLineOne("New Yourk, 148 avenu, 35 appartment");
+//		address.setAddressLineTwo("Manhattan");
+//		address.setCity("New-York");
+//		address.setState("New-York");
+//		address.setCountry("USA");
+//		address.setPostalCode("10066");
+//		address.setBilling(true);
+//		address.setShipping(true);
+//
+//		// attached the user to the address
+//		address.setUser(user);
+//
+//		assertEquals("Failed to add shipping address!", true, userDAO.addAddress(address));
+//	}
 
+	@Test
+	public void testGetAddresses() {
 		user = userDAO.getByEmail("kreig@mail.ru");
 
-		// add address
-		address = new Address();
-		address.setAddressLineOne("New Yourk, 148 avenu, 35 appartment");
-		address.setAddressLineTwo("Manhattan");
-		address.setCity("New-York");
-		address.setState("New-York");
-		address.setCountry("USA");
-		address.setPostalCode("10066");
-		address.setBilling(true);
-		address.setShipping(true);
-
-		// attached the user to the address
-		address.setUser(user);
-
-		assertEquals("Failed to add shipping address!", true, userDAO.addAddress(address));
+		assertEquals("Failed to fetch the list of addresses and size does not match", 2,
+				userDAO.listShippingAddresses(user).size());
 	}
 
 }
