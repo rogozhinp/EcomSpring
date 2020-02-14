@@ -102,51 +102,73 @@ public class UserTestCase {
 //
 //	}
 
+//	@Test
+//	public void testAddAddress() {
+//		// add user
+//		user = new User();
+//		user.setFirstName("Daniel");
+//		user.setLastName("Kreig");
+//		user.setEmail("kreig@mail.ru");
+//		user.setContactNumber("1235678234");
+//		user.setRole("USER");
+//		user.setPassword("12345");
+//
+//		assertEquals("Failed to add user!", true, userDAO.add(user));
+//
+//		// add address
+//		address = new Address();
+//		address.setAddressLineOne("New Yourk, 145 avenu, 54 appartment");
+//		address.setAddressLineTwo("Near Times Squar");
+//		address.setCity("New-York");
+//		address.setState("New-York");
+//		address.setCountry("USA");
+//		address.setPostalCode("10001");
+//		address.setBilling(true);
+//
+//		// attached the user to the address
+//		address.setUser(user);
+//
+//		assertEquals("Failed to add address!", true, userDAO.addAddress(address));
+//
+//		// add shipping adress
+//		address = new Address();
+//		address.setAddressLineOne("New Yourk, 145 avenu, 54 appartment");
+//		address.setAddressLineTwo("Near Times Squar");
+//		address.setCity("New-York");
+//		address.setState("New-York");
+//		address.setCountry("USA");
+//		address.setPostalCode("10001");
+//		// set shipping to true
+//		address.setShipping(true);
+//
+//		// attached the address with the user
+//		address.setUser(user);
+//
+//		// add the shipping address
+//		assertEquals("Failed to add shipping address!", true, userDAO.addAddress(address));
+//
+//	}
+
 	@Test
 	public void testAddAddress() {
-		// add user
-		user = new User();
-		user.setFirstName("Daniel");
-		user.setLastName("Kreig");
-		user.setEmail("kreig@mail.ru");
-		user.setContactNumber("1235678234");
-		user.setRole("USER");
-		user.setPassword("12345");
 
-		assertEquals("Failed to add user!", true, userDAO.add(user));
+		user = userDAO.getByEmail("kreig@mail.ru");
 
 		// add address
 		address = new Address();
-		address.setAddressLineOne("New Yourk, 145 avenu, 54 appartment");
-		address.setAddressLineTwo("Near Times Squar");
+		address.setAddressLineOne("New Yourk, 148 avenu, 35 appartment");
+		address.setAddressLineTwo("Manhattan");
 		address.setCity("New-York");
 		address.setState("New-York");
 		address.setCountry("USA");
-		address.setPostalCode("10001");
+		address.setPostalCode("10066");
 		address.setBilling(true);
+		address.setShipping(true);
 
 		// attached the user to the address
 		address.setUser(user);
 
-		assertEquals("Failed to add address!", true, userDAO.addAddress(address));
-
-		// add shipping adress
-		address = new Address();
-		address.setAddressLineOne("New Yourk, 145 avenu, 54 appartment");
-		address.setAddressLineTwo("Near Times Squar");
-		address.setCity("New-York");
-		address.setState("New-York");
-		address.setCountry("USA");
-		address.setPostalCode("10001");
-		// set shipping to true
-		address.setShipping(true);
-
-		// attached the address with the user
-		address.setUser(user);
-
-		// add the shipping address
 		assertEquals("Failed to add shipping address!", true, userDAO.addAddress(address));
-
 	}
 
 }
