@@ -4,9 +4,12 @@
       xsi:schemaLocation="http://www.springframework.org/schema/webflow
                           http://www.springframework.org/schema/webflow/spring-webflow.xsd">
 			
-
+	<var name="user" class="com.hadson.shoppingbackend.dto.User"/>
+	
 	<!-- is the start state -->
-	<view-state id="personal" view="flows/register/signup-personal"></view-state>
+	<view-state id="personal" view="flows/register/signup-personal" model="user">
+		<transition on="billing" to="billing"/>
+	</view-state>
 	<view-state id="billing" view="flows/register/signup-billing"></view-state>
 	<view-state id="confirm" view="flows/register/signup-confirm"></view-state>
 	
