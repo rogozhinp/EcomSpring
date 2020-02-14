@@ -86,19 +86,66 @@ public class UserTestCase {
 //
 //	}
 
+//	@Test
+//	public void testUpdateCart() {
+//		// fetch the user by its email
+//		user = userDAO.getByEmail("kreig@mail.ru");
+//
+//		// get the cart of the user
+//		cart = user.getCart();
+//
+//		cart.setGrandTotal(55555);
+//
+//		cart.setCartLines(2);
+//
+//		assertEquals("Failed to update the cart!", true, userDAO.updateCart(cart));
+//
+//	}
+
 	@Test
-	public void testUpdateCart() {
-		// fetch the user by its email
-		user = userDAO.getByEmail("kreig@mail.ru");
+	public void testAddAddress() {
+		// add user
+		user = new User();
+		user.setFirstName("Daniel");
+		user.setLastName("Kreig");
+		user.setEmail("kreig@mail.ru");
+		user.setContactNumber("1235678234");
+		user.setRole("USER");
+		user.setPassword("12345");
 
-		// get the cart of the user
-		cart = user.getCart();
+		assertEquals("Failed to add user!", true, userDAO.add(user));
 
-		cart.setGrandTotal(55555);
+		// add address
+		address = new Address();
+		address.setAddressLineOne("New Yourk, 145 avenu, 54 appartment");
+		address.setAddressLineTwo("Near Times Squar");
+		address.setCity("New-York");
+		address.setState("New-York");
+		address.setCountry("USA");
+		address.setPostalCode("10001");
+		address.setBilling(true);
 
-		cart.setCartLines(2);
+		// attached the user to the address
+		address.setUser(user);
 
-		assertEquals("Failed to update the cart!", true, userDAO.updateCart(cart));
+		assertEquals("Failed to add address!", true, userDAO.addAddress(address));
+
+		// add shipping adress
+		address = new Address();
+		address.setAddressLineOne("New Yourk, 145 avenu, 54 appartment");
+		address.setAddressLineTwo("Near Times Squar");
+		address.setCity("New-York");
+		address.setState("New-York");
+		address.setCountry("USA");
+		address.setPostalCode("10001");
+		// set shipping to true
+		address.setShipping(true);
+
+		// attached the address with the user
+		address.setUser(user);
+
+		// add the shipping address
+		assertEquals("Failed to add shipping address!", true, userDAO.addAddress(address));
 
 	}
 
