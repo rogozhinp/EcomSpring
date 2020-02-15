@@ -9,24 +9,24 @@
 			<div class="card text-white bg-primary">
 
 				<div class="card-header">
-					<h4>Personal Details</h4>
+					<h4>Your Personal Details are ok?</h4>
 				</div>
 
 				<div class="card-body">
 					<div class="text-center">
-						<h3>
+						<p>
 							Name : <strong>${registerModel.user.firstName}
 								${registerModel.user.lastName}</strong>
-						</h3>
-						<h4>
+						</p>
+						<p>
 							Email : <strong>${registerModel.user.email}</strong>
-						</h4>
-						<h4>
+						</p>
+						<p>
 							Contact : <strong>${registerModel.user.contactNumber}</strong>
-						</h4>
-						<h4>
+						</p>
+						<p>
 							Role : <strong>${registerModel.user.role}</strong>
-						</h4>
+						</p>
 						<p>
 							<a href="${flowExecutionUrl}&_eventId_personal"
 								class="btn btn-success">Edit</a>
@@ -44,17 +44,16 @@
 			<div class="card text-white bg-primary">
 
 				<div class="card-header">
-					<h4>Billing Address</h4>
+					<h4>Your Billing Address are ok?</h4>
 				</div>
 
 				<div class="card-body">
 					<div class="text-center">
-						<p>${registerModel.billing.addressLineOne},</p>
-						<p>${registerModel.billing.addressLineTwo},</p>
-						<p>${registerModel.billing.city}-
-							${registerModel.billing.postalCode},</p>
-						<p>${registerModel.billing.state}</p>
-						<p>${registerModel.billing.country}</p>
+						<p>Address line one: <strong>${registerModel.billing.addressLineOne}</strong></p>
+						<p>Address line two: <strong>${registerModel.billing.addressLineTwo}</strong></p>
+						<p>City and zip: <strong>${registerModel.billing.city}-
+													${registerModel.billing.postalCode}</strong></p>
+						<p>State and Country: <strong>${registerModel.billing.state} - ${registerModel.billing.country}</strong></p>
 						<p>
 							<a href="${flowExecutionUrl}&_eventId_billing"
 								class="btn btn-success">Edit</a>
@@ -68,13 +67,13 @@
 
 	</div>
 
-	<div class="row justify-content-center">
+	<div class="row justify-content-center mt-5 mb-5">
 
 		<div class="col-sm-4 col-sm-offset-4">
 
 			<div class="text-center">
 
-				<a href="${flowExecutionUrl}&_eventId_success"
+				<a href="${flowExecutionUrl}&_eventId_submit"
 					class="btn btn-lg btn-success">Confirm</a>
 
 			</div>
