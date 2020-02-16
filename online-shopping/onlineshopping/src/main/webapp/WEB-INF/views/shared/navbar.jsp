@@ -23,6 +23,24 @@
 					href="${contextRoot}/register">Sign Up</a></li>
 				<li id="login" class="nav-item"><a class="nav-link"
 					href="${contextRoot}/login">Login</a></li>
+				<li id="login" class="dropdown nav-item show">
+				
+					<a class="nav-link dropdown-toggle"
+						href="javascript:void(0)" class="btn btn-default dropdown-toggle"
+						id="dropdownMenu1" data-toggle="dropdown"> Full Name <span
+							class="caret"></span>
+					</a>
+						<ul class="dropdown-menu show">
+							<li><a class="dropdown-item" href="${contextRoot}/cart"> <span
+									class="glyphicon glyphicon-shopping-cart"></span> <span
+									class="badge">0</span> - &#36; 0.0
+							</a></li>
+							<li class="divider" role="separator"></li>
+							<li><a class="dropdown-item" href="${contextRoot}/logout">Logout</a></li>
+	
+	
+						</ul>
+				</li>
 			</ul>
 		</div>
 	</div>
