@@ -27,13 +27,13 @@
 				
 					<a class="nav-link dropdown-toggle"
 						href="javascript:void(0)" class="btn btn-default dropdown-toggle"
-						id="dropdownMenu1" data-toggle="dropdown"> Full Name <span
+						id="dropdownMenu1" data-toggle="dropdown"> ${userModel.fullName} <span
 							class="caret"></span>
 					</a>
 						<ul class="dropdown-menu show">
 							<li><a class="dropdown-item" href="${contextRoot}/cart"> <span
 									class="glyphicon glyphicon-shopping-cart"></span> <span
-									class="badge">0</span> - &#36; 0.0
+									class="badge">${userModel.cart.cartLines}</span> - &#36; ${userModel.cart.grandTotal}
 							</a></li>
 							<li class="divider" role="separator"></li>
 							<li><a class="dropdown-item" href="${contextRoot}/logout">Logout</a></li>
