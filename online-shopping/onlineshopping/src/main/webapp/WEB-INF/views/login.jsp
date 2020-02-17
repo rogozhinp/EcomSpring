@@ -58,21 +58,30 @@
 		<div class="content">
 
 			<div class="container">
-
+				<%-- this will be displayed if the credentials are wrong --%>
 				<c:if test="${not empty message }">
-					<%-- this will be displayed if the credentials are wrong --%>
+
 					<div class="row justify-content-center">
 
 						<div class="col-md-offset-3 col-md-6">
-						
-							<div class="alert alert-danger">
-							
-								${message }
-							
-							</div>
-						
+
+							<div class="alert alert-danger">${message }</div>
+
 						</div>
-						
+
+					</div>
+				</c:if>
+				<%-- this will be displayed only when the user has logged out --%>
+				<c:if test="${not empty logout }">
+
+					<div class="row justify-content-center">
+
+						<div class="col-md-offset-3 col-md-6">
+
+							<div class="alert alert-success">${logout }</div>
+
+						</div>
+
 					</div>
 				</c:if>
 

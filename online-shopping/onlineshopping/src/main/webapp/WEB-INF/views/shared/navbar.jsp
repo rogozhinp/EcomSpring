@@ -44,7 +44,7 @@
 								</a></li>
 								<li class="divider" role="separator"></li>
 							</security:authorize>
-							<li><a class="dropdown-item" href="${contextRoot}/logout">Logout</a></li>
+							<li><a class="dropdown-item" href="${contextRoot}/perform-logout">Logout</a></li>
 
 
 						</ul></li>
