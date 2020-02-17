@@ -87,6 +87,15 @@ body {
 	
 }
 
+.cartImg{
+	width: 100px;
+	height: 100px;
+}
+
+.unavailable{
+	color: red;
+}
+
 
 /*glyphicons*/
 @font-face {
