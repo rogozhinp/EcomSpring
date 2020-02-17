@@ -133,18 +133,20 @@
 
 
 
-				<div class="form-group">
+						<div class="form-group">
 
-					<div class="col-md-offset-4 col-md-4">
+							<div class="col-md-offset-4 col-md-4">
 
-						<input type="submit" name="submit" id="submit" value="Submit"
-							class="btn btn-primary" />
+								<input type="submit" name="submit" id="submit" value="Submit"
+									class="btn btn-primary" />
 
 
-					</div>
+							</div>
+						</div>
+
+					</sf:form>
+
 				</div>
-
-				</sf:form>
 
 			</div>
 
@@ -152,11 +154,9 @@
 
 	</div>
 
-</div>
-
-<!-- Modal -->
-	<div class="modal fade" id="categoryForm" tabindex="-1"
-		role="dialog" aria-labelledby="myModalLabel">
+	<!-- Modal -->
+	<div class="modal fade" id="categoryForm" tabindex="-1" role="dialog"
+		aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -202,53 +202,58 @@
 	</div>
 
 
-<div class="row">
+	<div class="row">
 
-	<div class='col-lg-12'>
-		<h1>Available Products</h1>
+		<div class='col-lg-12'>
+			<div class="contaiter-fluid">
+				<div class="table-responsive-sm">
 
-
-
-		<table id="adminProductsTable"
-			class="table table-condensed table-bordered">
-
-			<thead>
-				<tr>
-					<th>Id</th>
-					<th>image</th>
-					<th>Name</th>
-					<th>Brand</th>
-					<th>Qty. Avail</th>
-					<th>Unit Price</th>
-					<th>Activate</th>
-					<th>Edit</th>
-				</tr>
-			</thead>
+					<h1>Available Products</h1>
 
 
 
-			<tfoot>
-				<tr>
-					<th>id</th>
-					<th>image</th>
-					<th>Name</th>
-					<th>Brand</th>
-					<th>Qty. Avail</th>
-					<th>Unit Price</th>
-					<th>Activate</th>
-					<th>Edit</th>
-				</tr>
-			</tfoot>
+					<table id="adminProductsTable"
+						class="table table-condensed table-bordered">
+
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>image</th>
+								<th>Name</th>
+								<th>Brand</th>
+								<th>Qty. Avail</th>
+								<th>Unit Price</th>
+								<th>Activate</th>
+								<th>Edit</th>
+							</tr>
+						</thead>
 
 
-		</table>
+
+						<tfoot>
+							<tr>
+								<th>id</th>
+								<th>image</th>
+								<th>Name</th>
+								<th>Brand</th>
+								<th>Qty. Avail</th>
+								<th>Unit Price</th>
+								<th>Activate</th>
+								<th>Edit</th>
+							</tr>
+						</tfoot>
+
+
+					</table>
+
+				</div>
+			</div>
+
+		</div>
+
 
 
 	</div>
-
-
-
-</div>
 
 
 </div>

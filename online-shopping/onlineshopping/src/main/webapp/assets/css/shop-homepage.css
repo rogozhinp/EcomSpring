@@ -46,6 +46,10 @@ body {
 	margin:auto;
 }
 
+.table-responsive {
+	overflow-x: inherit;
+}
+
 
 /*glyphicons*/
 @font-face {
