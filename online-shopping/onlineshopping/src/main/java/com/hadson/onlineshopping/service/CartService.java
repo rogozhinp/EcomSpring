@@ -11,6 +11,7 @@ import com.hadson.onlineshopping.model.UserModel;
 import com.hadson.shoppingbackend.dao.CartLineDAO;
 import com.hadson.shoppingbackend.dto.Cart;
 import com.hadson.shoppingbackend.dto.CartLine;
+import com.hadson.shoppingbackend.dto.Product;
 
 @Service("cartService")
 public class CartService {
@@ -33,6 +34,37 @@ public class CartService {
 
 		return cartLineDAO.list(this.getCart().getId());
 
+	}
+
+	public String updateCartLine(int cartLineId, int count) {
+
+		// fetch the cart line
+		CartLine cartLine = cartLineDAO.get(cartLineId);
+
+		if (cartLine == null) {
+			return "result=error";
+		} else {
+			Product product = cartLine.getProduct();
+
+			double oldTotal = cartLine.getTotal();
+
+			if (product.getQuantity() <= count) {
+				count = product.getQuantity();
+			}
+
+			cartLine.setProductCount(count);
+			cartLine.setBuyingPrice(product.getUnitPrice());
+			cartLine.setTotal(product.getUnitPrice() * count);
+
+			cartLineDAO.update(cartLine);
+			Cart cart = this.getCart();
+
+			cart.setGrandTotal(cart.getGrandTotal() - oldTotal + cartLine.getTotal());
+
+			cartLineDAO.updateCart(cart);
+
+			return "result=updated";
+		}
 	}
 
 }
