@@ -34,6 +34,12 @@ public class CartController {
 			case "added":
 				mv.addObject("message", "CartLine has been added successfully!");
 				break;
+			case "unavailable":
+				mv.addObject("message", "Product quantity is not available!");
+				break;
+			case "maximum":
+				mv.addObject("message", "CartLine has reached to maximum count!");
+				break;
 			}
 		}
 
@@ -47,7 +53,7 @@ public class CartController {
 
 	@RequestMapping("/{cartLineId}/update")
 	public String updateCart(@PathVariable int cartLineId, @RequestParam int count) {
-		String response = cartService.updateCartLine(cartLineId, count);
+		String response = cartService.manageCartLine(cartLineId, count);
 		return "redirect:/cart/show?" + response;
 	}
 
